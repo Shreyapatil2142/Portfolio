@@ -1,15 +1,10 @@
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
-// import { MENULINKS, PROJECTS } from "../../constants";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectTile from "../common/project-tile";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, NO_MOTION_PREFERENCE_QUERY } from "pages";
-import { RoughNotation } from "react-rough-notation";
-import { StaticImageData } from "next/image";
-// import { useOnScreen } from "@/hooks/useOnScreen";
-// import { useScrollActive } from "@/hooks/useScrollActive";
-import { useSectionStore } from "@/store/section";
-import { projects } from "../../constants";
+
+import { projects , MENULINKS } from "../../constants";
 
 
 const ProjectsSection = ({ isDesktop }: IDesktop) => {
@@ -40,20 +35,12 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
         },
       },
     })
-  }, [])
-
-  // Set Active Session
-  // const projectSectionOnView = useScrollActive(sectionRef)
-  const { setSection } = useSectionStore()
-
-  // useEffect(() => {
-  //   projectSectionOnView && setSection("#project")
-  // }, [projectSectionOnView, setSection])
+  }, []);
 
   return (
     <section
       ref={sectionRef}
-      id="project"
+      id={MENULINKS[2].ref}
       className="relative h-full overflow-hidden py-14 px-10 lg:px-[5%]"
     >
 

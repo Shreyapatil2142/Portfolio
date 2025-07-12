@@ -12,9 +12,13 @@ export const MENULINKS = [
     name: "Home",
     ref: "home",
   },
+   {
+    name: "About",
+    ref: "about",
+  },
   {
-    name: "Works",
-    ref: "works",
+    name: "Projects",
+    ref: "projects",
   },
   {
     name: "Skills",
@@ -262,6 +266,7 @@ export const SKILLS = {
     "Python",
     "Java",
     "Cpp",
+    "jira",
   ],
   librariesAndFrameworks: [ "gsap","tailwind", "react",  "nextjs","sass",],
   databases: ["nodejs", "mysql","mongodb",],
@@ -286,6 +291,147 @@ export enum ItemSize {
 }
 
 export const TIMELINE: Array<TimelineNodeV2> = [
+ 
+{
+    type: NodeTypes.CHECKPOINT,
+    title: "2025",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Software Engineer Intern – Omronix HMKS",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Working as a Software Engineer Intern at Omronix - HMKS, contributing to development and enhancement of software solutions with a focus on innovation and scalability.",
+    slideImage: "/timeline/web-8.png",
+    image:"timeline/Omronix.svg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Content Team – ROBORASHTRA 2K25",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Contributed to content creation at ROBORASHTRA 2K25, including scripting and trending reel production.",
+    image: "/timeline/RoboRashtra.svg",
+    slideImage: "/timeline/web-10.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2nd Runner-Up – PBL Poster Competition, PCCOER",
+    size: ItemSize.SMALL,
+    subtitle:
+      "🎯Showcased project through detailed poster presentation, demonstrating solution strategy and innovation.",
+    slideImage: "/timeline/web-11.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "GDG Bootcamp – Solution Challenge Hackathon",
+    size: ItemSize.SMALL,
+    subtitle: "Participated in Problem Statement Explainer Session at MIT ADT. Collaborated with peers to brainstorm real-world tech solutions.",
+    image: "/timeline/logo_7.svg",
+    slideImage: "/timeline/web-12.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+   {
+    type: NodeTypes.CHECKPOINT,
+    title: "2025",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.DIVERGE,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Android Developer – AICTE Virtual Internship",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Completed virtual internship (Oct–Dec 2024) through Eduskills & Google Developers. Gained hands-on experience building impactful Android apps.",
+    slideImage: "/timeline/web-13.png",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2nd Place – GFG-XPCCOER Coding Contest",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Secured 2nd place in a competitive coding contest organized by GFG-XPCCOER, highlighting problem-solving skills and passion for development.",
+    image: "/timeline/logo_6.svg",
+    slideImage: "/timeline/web-9.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CONVERGE,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Started B.E. in Information Technology – PCCOER 🎓",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Began Bachelor's degree journey in IT at Pimpri Chinchwad College of Engineering and Research, aiming to explore core areas in tech and innovation.",
+    slideImage: "/timeline/web-9.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+   {
+    type: NodeTypes.CHECKPOINT,
+    title: "Internship at IISER, Pune",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Contributed to IoT projects , collaborated with research teams on building interactive tools and hands on activities.",
+    image:"timeline/IISER.svg",
+    slideImage: "/timeline/web-15.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2024",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.DIVERGE,
+  },
+ 
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Seminar On AstroTinker Bot",
+    size: ItemSize.SMALL,
+    subtitle:
+      "An innovative concept combining astronomy and robotics for space-based educational exploration.",
+    slideImage: "/timeline/web-17.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "1st Internship at SpWebconnect",
+    size: ItemSize.SMALL,
+    subtitle: "Worked on real-world frontend projects using HTML, CSS, JavaScript, and React; contributed to responsive UI development and component integration.",
+    image: "timeline/SpWebConnect.svg",
+    slideImage: "/timeline/web-16.png",
+    shouldDrawLine: true,
+    alignment: Branch.RIGHT,
+  },
+  {
+    type: NodeTypes.CONVERGE,
+  },
   {
     type: NodeTypes.CHECKPOINT,
     title: "2023",
@@ -295,30 +441,12 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Speaker at React India",
+    title: "Diploma at GPP",
     size: ItemSize.SMALL,
     subtitle:
-      "Discussed on Interaction to Next Paint (INP), a Google Core Web Vital metric",
-    image: "/timeline/reactindia.svg",
-    slideImage: "/timeline/reactindia.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2022",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Frontend Engineer 2 (Current)",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Frontend Engineering @ Core team, solving problems around Livingroom device performance",
-    image: "/timeline/hotstar.svg",
-    slideImage: "/timeline/hotstar.jpeg",
+      "Successfully completed 3-year diploma in IT, gaining strong foundation in programming, databases, and software development lifecycle.",
+    image: "/timeline/GPP.svg",
+    slideImage: "/timeline/web-17.png",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
@@ -331,225 +459,11 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Contributed to Server driven UI framework for powering experiences @ Flipkart Wholesale 😎",
-    image: "/timeline/flipkart.svg",
-    slideImage: "/timeline/flipkart.gif",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2020",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.DIVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer (freelance)",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Built solutions for employee engagement, productivity and performance 🎯",
-    image: "/timeline/huminos.svg",
-    slideImage: "/timeline/huminos-freelance.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Motion Graphics (freelance)",
-    size: ItemSize.SMALL,
-    subtitle: "Motion Graphics content for Product Launch 🚀",
-    image: "/timeline/octanner.svg",
-    slideImage: "/timeline/aftereffects.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CONVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2019",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Worked on enterprise blockchain solutions for web. Transforming UI/UX and frontend framework. Built a design system.",
-    image: "/timeline/dltlabs.svg",
-    slideImage: "/timeline/dlt-website.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UX Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "First job! 🥳 Product design and development for employee engagement chatbot suite for workplace by facebook",
-    image: "/timeline/huminos.svg",
-    slideImage: "/timeline/huminos-website.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Graduated from College 🎓",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Spent 4 years laying the foundation of Frontend Engineering, UI/UX, and Fitness!",
-    image: "/timeline/akgec.svg",
-    slideImage: "/timeline/farewell.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2018",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.DIVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Student lead at SDC-SI",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Represented a team of 39 talented developers. Served different roles of leadership, project management and delivery.",
-    image: "/timeline/si.svg",
-    slideImage: "/timeline/si-head.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Lecture on SVG animations",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Guided 200 students to create their first animated SVG using CSS/SMIL at PHP Workshop, SDC-SI",
-
-    slideImage: "/timeline/svg-lecture.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2017",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Designing, IMSU",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Competed against 20+ teams for design and development of web project from scratch",
-    slideImage: "/timeline/ims-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Lecture on Javascript",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Guided 200 students for javascript fundamentals at Game Development workshop, SDC-SI",
-    slideImage: "/timeline/js-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Design, ABES ACM",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Competed in web and graphic design challenge with 100+ participants.",
-    slideImage: "/timeline/abes-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Lecture on Web Technologies",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Guided 300+ students on getting started with web technologies like HTML/CSS and JS",
-    slideImage: "/timeline/web-17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2016",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st position in Web Designing, IMSU",
-    size: ItemSize.SMALL,
-    subtitle: "Secured 1st prize in Web design challenge against 50+ teams",
-    slideImage: "/timeline/ims-16.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CONVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "UI/UX, Frontend Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Started journey in SDC-SI, where I learnt the fundamentals of Frontend, UI/UX, Graphic design and more...",
-    image: "/timeline/si.svg",
-    slideImage: "/timeline/si-start.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2014",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Recognized Themer",
+    title: "10th passed from C.E.S.Prerana High School",
     size: ItemSize.SMALL,
     subtitle:
       "Awarded as recognized themer,  Developed themes and ROMs for Xperia 2011 devices lineup with over 15k+ downloads. Featured on xda portal twice.",
-    image: "/timeline/xda.svg",
-    slideImage: "/timeline/xda-rt.jpg",
+    slideImage: "/timeline/web-19.png",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },

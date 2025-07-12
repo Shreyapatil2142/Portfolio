@@ -2,11 +2,14 @@ import { gsap, Linear } from "gsap";
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import { MENULINKS } from "../../constants"; 
 
 const AboutSection = () => {
+
+   const { ref: aboutRef } = MENULINKS[1];
   return (
 
-    <div className=" min-h-screen flex justify-center px-6 py-10" style={{ fontFamily: '"Poppins", sans-serif' }}>
+    <div id={aboutRef} className=" min-h-screen flex justify-center px-6 py-10" style={{ fontFamily: '"Poppins", sans-serif' }}>
       <main className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Section */}
         <section className="relative flex flex-col justify-start items-start">
@@ -70,8 +73,6 @@ const AboutSection = () => {
         </section>
       </main>
     </div>
-
-
 
     // </section>
   );

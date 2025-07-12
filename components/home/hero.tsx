@@ -1,4 +1,5 @@
 import { EMAIL, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
+import Contact from "../common/Contact";
 import React, { MutableRefObject, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Image from "next/image";
@@ -92,13 +93,13 @@ const HeroSection = React.memo(() => {
             target: "_blank",
             rel: "noreferrer",
           }}
-          href="/Ayush_Resume.pdf"
+          href="/Shreya_Resume.pdf"
         ></Button>
         <Button
           classes="ml-3"
           type={ButtonTypes.PRIMARY}
           name="Let's Talk"
-          href={SOCIAL_LINKS.topmate}
+          href= "/contact"
           otherProps={{
             target: "_blank",
             rel: "noreferrer",

@@ -37,6 +37,7 @@ const ProjectTile = ({ item }: Props) => {
     )
   }, [projectCard])
 
+
   return (
 
     <div ref={projectCard}
@@ -73,67 +74,51 @@ const ProjectTile = ({ item }: Props) => {
 
             <div className=" flex items-end group gap-3">
 
-              {item.githubURL && (
-                <a
-                  href={item.githubURL}
-                  title={`See '${item.title}' on Github`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2"
+              <a
+                href={item.githubURL}
+                title={`See '${item.title}' on Github`}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-1 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="white"
+                  className="scale-150 sm:scale-125 opacity-75 hover:-rotate-12 fill-white dark:fill-bglight"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="27"
-                    height="27"
-                    stroke="#ffffff"
-                    fill="white"
-                    className="opacity-75 scale-[1.0] group-hover:-rotate-12"
-
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href={item.liveURL}
+                title={`See live demo of '${item.title}'`}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-visible:outline-marrsgreen dark:focus-visible:outline-carrigreen mr-8 rounded-full"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-7 w-7 scale-125 sm:scale-100 bg-cardlight dark:bg-carddark hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full p-1 hover:-rotate-12"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
-                    ></path>
-                  </svg>
-                </a>
-              )}
-
-              {item.liveURL && (
-                <a
-                  href={item.liveURL}
-                  title={`See '${item.title}' on Github`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="scale-[0.7] group-hover:translate-x-1 transition-transform duration-300"
-                    width="27"
-                    height="27"
-                    viewBox="0 0 26 26"
-                    strokeWidth="1.5"
-                    stroke="#ffffff"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12h14" />
-                    <path d="M13 18l6 -6" />
-                    <path d="M13 6l6 6" />
-                  </svg>
-
-                </a>
-              )}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
 
             </div>
-
           </div>
 
           <p className="text-white mt-2 text-base leading-relaxed">

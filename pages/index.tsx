@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import SocialLinks from "@/components/common/SocialLinks";
 import Loader from "@/components/common/Loader";
 import Layout from "@/components/common/layout";
 import Header from "@/components/common/header";
@@ -14,9 +15,9 @@ import HeroSection from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects";
 import SkillsSection from "@/components/home/skills";
 import CollaborationSection from "@/components/home/collaboration";
+import Contact from "@/components/common/Contact";
 import Footer from "@/components/common/footer";
 import TimelineSection from "@/components/home/timeline";
-import Scripts from "@/components/common/scripts";
 import AboutSection from "@/components/home/about";
 
 const DEBOUNCE_TIME = 100;
@@ -91,9 +92,10 @@ export default function Home() {
           <SkillsSection />
           <TimelineSection isDesktop={isDesktop} />
           <CollaborationSection />
+          <SocialLinks />
+          <Contact />
           <Footer />
         </main>
-        <Scripts />
       </Layout>
     </>
       )}

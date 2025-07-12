@@ -79,7 +79,7 @@ const SkillsSection = () => {
       {renderBackgroundPattern()}
       <div
         className={SKILL_STYLES.SECTION}
-        id={MENULINKS[2].ref}
+        id={MENULINKS[3].ref}
         ref={targetSection}
       >
         <div className="flex flex-col skills-wrapper">
@@ -89,7 +89,7 @@ const SkillsSection = () => {
             <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 staggered-reveal">
               LANGUAGES AND TOOLS
             </h3>
-            <div className="flex items-center flex-wrap gap-6 skills-wrapper seq staggered-reveal">
+            <div className="flex items-center flex-wrap gap-6 skills-wrapper seq">
               {SKILLS.languagesAndTools.map((skill) => (
                 <Image
                   key={skill}
@@ -107,7 +107,7 @@ const SkillsSection = () => {
               <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 staggered-reveal">
                 LIBRARIES AND FRAMEWORKS
               </h3>
-              <div className="flex flex-wrap gap-6 transform-gpu skills-wrapper seq staggered-reveal">
+              <div className="flex flex-wrap gap-6 transform-gpu skills-wrapper seq">
                 {SKILLS.librariesAndFrameworks.map((skill) => (
                   <Image
                     key={skill}
@@ -145,7 +145,7 @@ const SkillsSection = () => {
               <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
                 CLOUD PLATFORMS & ML TOOLS
               </h3>
-              <div className="flex flex-wrap gap-6 skills-wrapper seq  transform-gpu">
+              <div className="flex flex-wrap gap-6 skills-wrapper seq transform-gpu">
                 {SKILLS.CloudAndML.map((skill) => (
                   <Image
                     key={skill}
