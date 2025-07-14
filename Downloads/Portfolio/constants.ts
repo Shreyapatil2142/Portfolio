@@ -158,7 +158,7 @@ export const SKILLS = {
     "Cpp",
     "jira",
   ],
-  librariesAndFrameworks: ["gsap", "tailwind", "react", "nextjs", "sass",],
+  librariesAndFrameworks: ["gsap", "tailwind", "react", "nextjs", "sass", "typescript"],
   databases: ["nodejs", "mysql", "mongodb",],
   CloudAndML: ["git", "firebase", "gcloud", "Jupyter", "aws", "Colab",],
   UserInterface: ["figma", "photoshop", "svg",]
