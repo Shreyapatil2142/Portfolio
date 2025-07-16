@@ -3,6 +3,8 @@ import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from 
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { MENULINKS } from "../../constants";
+import Image from "next/image";
+import Button from "../common/button";
 
 const ProfileImage = memo(() => (
   <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
@@ -26,9 +28,10 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 z-10 transition-opacity duration-700 group-hover:opacity-0 hidden sm:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
 
-          <img
+          <Image
             src="/about/aboutus.png"
             alt="Profile"
+            fill
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
           />

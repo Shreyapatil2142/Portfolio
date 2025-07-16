@@ -415,25 +415,41 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     return { timeline, duration };
   };
 
+  // useEffect(() => {
+  //   // Generate and set the timeline svg
+  //   setTimelineSvg(svgContainer, timelineSvg);
+
+  //   const { timeline, duration }: { timeline: GSAPTimeline; duration: number } =
+  //     initScrollTrigger();
+
+  //   // Animation for Timeline SVG
+  //   animateTimeline(timeline, duration);
+  // }, [
+  //   timelineSvg,
+  //   svgContainer,
+  //   svgWidth,
+  //   rightBranchX,
+  //   screenContainer,
+  //   svgCheckpointItems.length,
+  //   isDesktop,
+  //   svgLength,
+  // ]);
+
   useEffect(() => {
-    // Generate and set the timeline svg
-    setTimelineSvg(svgContainer, timelineSvg);
+  setTimelineSvg(svgContainer, timelineSvg);
+  const { timeline, duration } = initScrollTrigger();
+  animateTimeline(timeline, duration);
+}, [
+  timelineSvg,
+  svgContainer,
+  svgWidth,
+  rightBranchX,
+  screenContainer,
+  svgCheckpointItems.length,
+  isDesktop,
+  svgLength,
+]);
 
-    const { timeline, duration }: { timeline: GSAPTimeline; duration: number } =
-      initScrollTrigger();
-
-    // Animation for Timeline SVG
-    animateTimeline(timeline, duration);
-  }, [
-    timelineSvg,
-    svgContainer,
-    svgWidth,
-    rightBranchX,
-    screenContainer,
-    svgCheckpointItems.length,
-    isDesktop,
-    svgLength,
-  ]);
 
   const renderSlides = (): React.ReactNode => (
     <div
