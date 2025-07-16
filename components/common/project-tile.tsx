@@ -47,7 +47,7 @@ const ProjectTile = ({ item }: Props) => {
 
         <div className="flex-1 skills-wrapper seq overflow-hidden max-w-xl">
           {typeof item.image === "string" ? (
-            <img
+            <Image
               src={item.image}
               alt={item.title}
               className="w-full rounded-md transform transition-transform duration-300 ease-in-out hover:scale-110"
