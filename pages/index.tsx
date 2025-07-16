@@ -12,8 +12,7 @@ import Cursor from "@/components/common/cursor";
 import HeroSection from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects";
 import SkillsSection from "@/components/home/skills";
-import CollaborationSection from "@/components/home/collaboration";
-import Contact from "@/components/common/Contact";
+import Contact from "@/components/home/Contact";
 import Footer from "@/components/common/footer";
 import TimelineSection from "@/components/home/timeline";
 import AboutSection from "@/components/home/about";
@@ -29,7 +28,7 @@ export interface IDesktop {
 }
 
 export default function Home() {
-    const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
@@ -53,7 +52,7 @@ export default function Home() {
 
   useEffect(() => {
 
-      setTimeout(() => {
+    setTimeout(() => {
       setIsLoading(false);
     }, 2600);
 
@@ -69,32 +68,32 @@ export default function Home() {
   );
 
   return (
-      <>
+    <>
       {isLoading ? (
         <Loader />
       ) : (
-    <>
-      <Head>
-        <title>{METADATA.title}</title>
-      </Head>
-      <Layout>
-        <Header />
-        <ProgressIndicator />
-        <Cursor isDesktop={isDesktop} />
-        <main className="flex-col flex">
-          {renderBackdrop()}
-          <HeroSection />
-          <AboutSection />
-          <ProjectsSection /> 
-          <SkillsSection />
-          <TimelineSection isDesktop={isDesktop} />
-          <CollaborationSection />
-          <SocialLinks />
-          <Contact />
-          <Footer />
-        </main>
-      </Layout>
-    </>
+        <>
+          <Head>
+            <image>{METADATA.img}</image>
+            <title>{METADATA.title}</title>
+          </Head>
+          <Layout>
+            <Header />
+            <ProgressIndicator />
+            <Cursor isDesktop={isDesktop} />
+            <main className="flex-col flex">
+              {renderBackdrop()}
+              <HeroSection />
+              <AboutSection />
+              <ProjectsSection />
+              <SkillsSection />
+              <TimelineSection isDesktop={isDesktop} />
+              <SocialLinks />
+              <Contact />
+              <Footer />
+            </main>
+          </Layout>
+        </>
       )}
     </>
   );

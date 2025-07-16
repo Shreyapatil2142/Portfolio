@@ -63,32 +63,32 @@ export const certificates:Certificate[] = [
  {
   id: 1,
   title:"INTRODUCTION TO GENERATIVE AI",
-  image:"/certificates/GenAI.pdf"
+  image:"/certificates/GenAI.jpg"
  },
   {
   id: 2,
   title:"Programming In Java",
-  image:"/certificates/Java.pdf"
+  image:"/certificates/Java.jpg"
  },
   {
   id: 3,
   title:"Basics of Python",
-  image:"/certificates/Infosys.pdf"
+  image:"/certificates/Infosys.jpg"
  },
   {
   id: 4,
   title:"GenAI - Art of the possible",
-  image:"/certificates/AWS.pdf"
+  image:"/certificates/AWS.jpg"
  },
   {
   id: 5,
   title:"Learning Microsoft 365 Copilot",
-  image:"/certificates/Copilot.pdf"
+  image:"/certificates/Copilot.jpg"
  },
   {
   id: 6,
   title:"Digital Skills: User Experience",
-  image:"/certificates/Digital-Skills.pdf"
+  image:"/certificates/Digital-Skills.jpg"
  },
 ]
 
@@ -249,7 +249,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     size: ItemSize.SMALL,
     subtitle:
       "Secured 2nd place in a competitive coding contest organized by GFG-XPCCOER, highlighting problem-solving skills and passion for development.",
-    image: "/timeline/logo_6.svg",
+    image: "/timeline/GFG.svg",
     slideImage: "/timeline/web-9.jpg",
     shouldDrawLine: true,
     alignment: Branch.RIGHT,

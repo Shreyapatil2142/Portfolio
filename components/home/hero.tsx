@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import Button, { ButtonTypes } from "../common/button";
 import HeroImage from "./hero-image";
+import { FileText } from "lucide-react";
 
 const HERO_STYLES = {
   SECTION:
@@ -65,11 +66,12 @@ const HeroSection = React.memo(() => {
       <a
         href={SOCIAL_LINKS[el]}
         key={el}
-        className={HERO_STYLES.SOCIAL_LINK}
+        className={`${HERO_STYLES.SOCIAL_LINK} group`}
         rel="noreferrer"
         target="_blank"
       >
-        <Image src={`/social/${el}.svg`} alt={el} width={40} height={40} />
+        <Image src={`/social/${el}.svg`} alt={el} width={40} height={40}
+          className="transition duration-300 group-hover:scale-110 group-hover:brightness-125" />
       </a>
     ));
 
@@ -79,24 +81,27 @@ const HeroSection = React.memo(() => {
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
         <h2 className="text-4xl seq">Hello 👋🏻</h2>
-        <h1 className="text-3xl seq">I am Shreya</h1>
+        <h1 className="text-3xl seq">I am <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+          Shreya
+        </span>
+        </h1>
       </div>
       <p className="mb-4">
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
       </p>
 
-      <div className="flex seq mb-5">{renderSocialLinks()}</div>
+      <div className="flex seq mt-5 mb-5">{renderSocialLinks()}</div>
       <div className="flex seq">
-        <Button
-          classes="mr-3"
-          type={ButtonTypes.OUTLINE}
-          name="Resume"
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
-          href="/Shreya_Resume.pdf"
-        ></Button>
+
+        <a href="/Shreya_Resume.pdf" target="_blank"
+          rel="noreferrer" className="w-full lg:w-auto">
+          <button
+            className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#6366f1]/50 text-[#39c4ef] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 "
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
+            <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+          </button></a>
 
         <Button
           classes="ml-3"

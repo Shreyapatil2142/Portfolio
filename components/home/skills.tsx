@@ -36,7 +36,6 @@ const SkillsSection = () => {
 
   useEffect(() => {
     const revealAnimationRef = initRevealAnimation(targetSection);
-
     return revealAnimationRef.kill;
   }, [targetSection]);
 

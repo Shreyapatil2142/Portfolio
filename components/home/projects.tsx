@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects, certificates, MENULINKS } from "../../constants";
 import CertiCard from "../common/CertiCard";
 
+import useOnScreen from "hooks/useOnScreen";
+
 import Button, { ButtonTypes } from "../common/button";
 
 const ProjectsSection = () => {
@@ -41,37 +43,14 @@ const ProjectsSection = () => {
     return revealAnimationRef.kill;
   }, [targetSection]);
 
-  useEffect(() => {
-    const q = gsap.utils.selector(sectionRef)
-
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        scrub: true,
-        onEnter: () => {
-          gsap.fromTo(
-            q(".qoutes-animation"),
-            {
-              y: "-200%",
-            },
-            {
-              y: 0,
-            }
-          )
-        },
-      },
-    })
-  }, [sectionRef]);
-
-
   return (
     <section
       ref={sectionRef}
       id={MENULINKS[2].ref}
-      className="relative h-full overflow-hidden py-14 px-10 lg:px-[5%]"
+      className="relative h-full overflow-hidden py-12 px-10 lg:px-[5%]"
     >
 
-      <section ref={targetSection} className="flex flex-col items-center justify-center mt-2 text-center">
+      <section ref={targetSection} className="flex flex-col items-center justify-center mt-0 text-center">
         <p className="section-title-sm seq skills-wrapper opacity-100">PROJECTS</p>
         <h1 className="section-heading seq mt-2 opacity-100">My Projects</h1>
         <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2 opacity-100">

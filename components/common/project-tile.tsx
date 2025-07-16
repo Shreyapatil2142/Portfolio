@@ -1,6 +1,6 @@
 import Image from "next/image";
-import React, { MutableRefObject, useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { MutableRefObject,useState, useEffect, useRef } from "react";
+import {Linear,gsap} from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Project } from "../../constants";
 
@@ -11,30 +11,33 @@ interface Props {
 
 const ProjectTile = ({ item }: Props) => {
   const projectCard: MutableRefObject<HTMLDivElement> = useRef(null);
+ 
+  const [willChange, setwillChange] = useState(false);
+  
+  const initRevealAnimation = (
+  projectCard: MutableRefObject<HTMLDivElement>
+  ): ScrollTrigger => {
+    const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
+    revealTl.from(
+      projectCard.current.querySelectorAll(".seq"),
+      { opacity: 0, duration: 0.5, stagger: 0.5 },
+      "<"
+    );
+
+    return ScrollTrigger.create({
+      trigger: projectCard.current.querySelector(".skills-wrapper"),
+      start: "100px bottom",
+      end: `center center`,
+      animation: revealTl,
+      scrub: 0,
+      onToggle: (self) => setwillChange(self.isActive),
+    });
+  };
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: projectCard.current,
-        start: `70% bottom`,
-      },
-    })
-
-    tl.fromTo(
-      projectCard.current,
-      {
-        scale: 0,
-      },
-      {
-        scale: 1,
-        ease: "power1.inOut",
-      }
-    )
-  }, [projectCard])
-
-
+    const revealAnimationRef = initRevealAnimation(projectCard);
+    return revealAnimationRef.kill;
+  }, [projectCard]);
   return (
 
     <div ref={projectCard}
@@ -42,7 +45,7 @@ const ProjectTile = ({ item }: Props) => {
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
 
-        <div className="flex-1 overflow-hidden max-w-xl">
+        <div className="flex-1 skills-wrapper seq overflow-hidden max-w-xl">
           {typeof item.image === "string" ? (
             <img
               src={item.image}

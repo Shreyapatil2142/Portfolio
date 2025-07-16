@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import FadeIn from "@/components/common/FadeIn";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import mail from "./mailer";
+import mail from "../common/mailer";
 import styles from "./Contact.module.scss";
 import { MENULINKS } from "../../constants";
 
@@ -83,7 +83,7 @@ const Contact = () => {
         if (res.status === 200) {
           setMailerResponse("success");
           emptyForm();
-        } 
+        }
       })
       .catch((err) => {
         setMailerResponse("error");
@@ -268,7 +268,7 @@ const Contact = () => {
   return (
     <section
       ref={sectionRef}
-       id={MENULINKS[5].ref}
+      id={MENULINKS[5].ref}
       className="pt-20 sm:pt-10 md:pt-5 lg:pt-1 pb-20"
     >
       <div>
@@ -281,7 +281,7 @@ const Contact = () => {
             <p className="uppercase tracking-widest text-gray-light-1 staggered-reveal">
               CONTACT
             </p>
-            <h1 className="text-6xl mt-2 font-medium text-gradient w-fit staggered-reveal">
+            <h1 className="text-6xl mt-2 section-heading w-fit staggered-reveal">
               Contact
             </h1>
           </div>
@@ -343,9 +343,10 @@ const Contact = () => {
                 Message
               </label>
             </div>
-          </FadeIn>
 
+          </FadeIn>
         </form>
+        
         <div className="mt-9 mx-auto link">
           <button
             ref={buttonElementRef}
