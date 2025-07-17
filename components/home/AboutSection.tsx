@@ -1,5 +1,5 @@
-import React, { useEffect, memo, useMemo } from "react";
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react";
+import React, { useEffect, useCallback, memo, useMemo } from "react";
+import {Code, Sparkles} from "lucide-react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { MENULINKS } from "../../constants";
@@ -97,7 +97,7 @@ const AboutSection = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I’m a passionate and curious engineering student with a strong interest in web development, programming, and emerging technologies. I enjoy solving real-world problems, building user-friendly applications, and continuously improving my skills through hands-on projects, coding challenges, and creative exploration. Always eager to learn, collaborate, and make meaningful contributions through technology.</p>
+              I&apos;m a passionate and curious engineering student with a strong interest in web development&quot; programming&quot; and emerging technologies. I enjoy solving real-world problems&quot; building user-friendly applications&quot; and continuously improving my skills through hands-on projects&quot; coding challenges&quot; and creative exploration. Always eager to learn&quot; collaborate&quot; and make meaningful contributions through technology.</p>
 
             {/* Quote Section */}
             <div

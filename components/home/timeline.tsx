@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from "react";
 import {
   Branch,
   BranchNode,
@@ -25,15 +25,14 @@ const dotSize = 26;
 const TimelineSection = ({ isDesktop }: IDesktop) => {
   const [svgWidth, setSvgWidth] = useState(400);
   const [rightBranchX, setRightBranchX] = useState(109);
+  const svgContainer = useRef<HTMLDivElement | null>(null);
+  const timelineSvg = useRef(null); // already declared
 
   const svgCheckpointItems = TIMELINE.filter(
     (item) => item.type === NodeTypes.CHECKPOINT && item.shouldDrawLine
   );
 
   const svgLength = svgCheckpointItems?.length * separation;
-
-  const timelineSvg: MutableRefObject<SVGSVGElement> = useRef(null);
-  const svgContainer: MutableRefObject<HTMLDivElement> = useRef(null);
   const screenContainer: MutableRefObject<HTMLDivElement> = useRef(null);
 
   const addNodeRefsToItems = (
@@ -325,10 +324,12 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     });
   };
 
-  const setTimelineSvg = (
-    svgContainer: MutableRefObject<HTMLDivElement>,
-    timelineSvg: MutableRefObject<SVGSVGElement>
+  const setTimelineSvg = useCallback((
+    svgContainerRef: MutableRefObject<HTMLDivElement | null>,
+    timelineSvgRef: MutableRefObject<SVGSVGElement | null>
   ) => {
+    if (!svgContainerRef.current || !timelineSvgRef.current) return;
+
     const containerWidth = svgContainer.current.clientWidth;
     setSvgWidth(containerWidth);
 
@@ -338,7 +339,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     if (isSmallScreen()) {
       setRightBranchX(70);
     }
-  };
+  }, []);
 
   const setSlidesAnimation = (timeline: GSAPTimeline): void => {
     svgCheckpointItems.forEach((_, index) => {
@@ -415,14 +416,9 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     return { timeline, duration };
   };
 
-  // useEffect(() => {
-  //   // Generate and set the timeline svg
+  //   useEffect(() => {
   //   setTimelineSvg(svgContainer, timelineSvg);
-
-  //   const { timeline, duration }: { timeline: GSAPTimeline; duration: number } =
-  //     initScrollTrigger();
-
-  //   // Animation for Timeline SVG
+  //   const { timeline, duration } = initScrollTrigger();
   //   animateTimeline(timeline, duration);
   // }, [
   //   timelineSvg,
@@ -432,24 +428,20 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   //   screenContainer,
   //   svgCheckpointItems.length,
   //   isDesktop,
-  //   svgLength,
+  //   svgLength
   // ]);
 
   useEffect(() => {
-  setTimelineSvg(svgContainer, timelineSvg);
-  const { timeline, duration } = initScrollTrigger();
-  animateTimeline(timeline, duration);
-}, [
-  timelineSvg,
-  svgContainer,
-  svgWidth,
-  rightBranchX,
-  screenContainer,
-  svgCheckpointItems.length,
-  isDesktop,
-  svgLength,
-]);
-
+    setTimelineSvg(svgContainer, timelineSvg);
+    const { timeline, duration } = initScrollTrigger();
+    animateTimeline(timeline, duration);
+  }, [
+    setTimelineSvg,
+    initScrollTrigger,
+    animateTimeline,
+    svgContainer,
+    timelineSvg
+  ]);
 
   const renderSlides = (): React.ReactNode => (
     <div

@@ -1,6 +1,6 @@
 import { METADATA } from "../constants";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useCallback} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SocialLinks from "@/components/common/SocialLinks";
@@ -15,7 +15,7 @@ import SkillsSection from "@/components/home/skills";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/common/footer";
 import TimelineSection from "@/components/home/timeline";
-import AboutSection from "@/components/home/about";
+import AboutSection from "@/components/home/AboutSection";
 
 const DEBOUNCE_TIME = 100;
 
@@ -37,7 +37,7 @@ export default function Home() {
 
   let timer: NodeJS.Timeout = null;
 
-  const debouncedDimensionCalculator = () => {
+  const debouncedDimensionCalculator = useCallback(() => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       const isDesktopResult =
@@ -48,7 +48,7 @@ export default function Home() {
 
       setisDesktop(isDesktopResult);
     }, DEBOUNCE_TIME);
-  };
+  },[]);
 
   useEffect(() => {
 
@@ -61,7 +61,7 @@ export default function Home() {
     window.addEventListener("resize", debouncedDimensionCalculator);
     return () =>
       window.removeEventListener("resize", debouncedDimensionCalculator);
-  }, [timer]);
+  }, [timer,debouncedDimensionCalculator]);
 
   const renderBackdrop = (): React.ReactNode => (
     <div className="fixed top-0 left-0 h-screen w-screen bg-gray-900 -z-1"></div>
