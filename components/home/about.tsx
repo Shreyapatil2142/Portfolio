@@ -1,12 +1,12 @@
 import React, { useEffect, memo, useMemo } from "react";
 import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react";
-import AOS from "aos";
+import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { MENULINKS } from "../../constants";
 import Image from "next/image";
 import Button from "../common/button";
 
-const ProfileImage = memo(() => (
+const ProfileImage = memo(() => ( 
   <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
     <div
       className="relative group"
@@ -14,7 +14,7 @@ const ProfileImage = memo(() => (
       data-aos-duration="1000"
     >
       {/* Optimized gradient backgrounds with reduced complexity for mobile */}
-      <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:block">
+      <div className="absolute -inset-6 opacity-[25%] z-0 hidden sm:b- cfck">
         <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
         <div className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50" />

@@ -5,16 +5,12 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects, certificates, MENULINKS } from "../../constants";
 import CertiCard from "../common/CertiCard";
 
-import useOnScreen from "hooks/useOnScreen";
-
-import Button, { ButtonTypes } from "../common/button";
-
 const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('Projects');
 
   gsap.registerPlugin(ScrollTrigger)
   const sectionRef = useRef(null);
-  const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
+  const targetSection = useRef<HTMLDivElement | null>(null);
   const [willChange, setwillChange] = useState(false);
 
   const initRevealAnimation = (
