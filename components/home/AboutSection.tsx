@@ -49,7 +49,7 @@ const ProfileImage = memo(() => (
 ));
 
 
-const AboutSection = () => {
+const AboutSection = memo(() => {
 
   // Optimized AOS initialization
   useEffect(() => {
@@ -97,7 +97,7 @@ const AboutSection = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I&apos;m a passionate and curious engineering student with a strong interest in web development&quot; programming&quot; and emerging technologies. I enjoy solving real-world problems&quot; building user-friendly applications&quot; and continuously improving my skills through hands-on projects&quot; coding challenges&quot; and creative exploration. Always eager to learn&quot; collaborate&quot; and make meaningful contributions through technology.</p>
+              I&apos;m a passionate and curious engineering student with a strong interest in web development , programming, and emerging technologies. I enjoy solving real-world problems, building user-friendly applications, and continuously improving my skills through hands-on projects, coding challenges, and creative exploration. Always eager to learn, collaborate, and make meaningful contributions through technology.</p>
 
             {/* Quote Section */}
             <div
@@ -117,7 +117,7 @@ const AboutSection = () => {
               </div>
 
               <blockquote className="text-gray-300 text-center lg:text-left italic font-medium text-sm relative z-10 pl-6">
-                "Leveraging AI as a professional tool, not a replacement."
+                &quot;Leveraging AI as a professional tool, not a replacement.&quot;
               </blockquote>
             </div>
 
@@ -160,6 +160,6 @@ const AboutSection = () => {
       `}</style>
     </div>
   );
-};
+});
 
 export default memo(AboutSection);

@@ -26,7 +26,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   const [svgWidth, setSvgWidth] = useState(400);
   const [rightBranchX, setRightBranchX] = useState(109);
   const svgContainer = useRef<HTMLDivElement | null>(null);
-  const timelineSvg = useRef(null); // already declared
+  const timelineSvg = useRef(null); 
 
   const svgCheckpointItems = TIMELINE.filter(
     (item) => item.type === NodeTypes.CHECKPOINT && item.shouldDrawLine
@@ -302,7 +302,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     return timeline;
   };
 
-  const animateTimeline = (timeline: GSAPTimeline, duration: number): void => {
+  const animateTimeline = useCallback((timeline: GSAPTimeline, duration: number): void => {
     let index = 0;
 
     addNodeRefsToItems(TIMELINE).forEach((item) => {
@@ -322,7 +322,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
         index++;
       }
     });
-  };
+   }, []);
 
   const setTimelineSvg = useCallback((
     svgContainerRef: MutableRefObject<HTMLDivElement | null>,
@@ -365,7 +365,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     });
   };
 
-  const initScrollTrigger = (): {
+  const initScrollTrigger = useCallback((): {
     timeline: GSAPTimeline;
     duration: number;
   } => {
@@ -414,7 +414,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       animation: timeline,
     });
     return { timeline, duration };
-  };
+  }, []);
 
   //   useEffect(() => {
   //   setTimelineSvg(svgContainer, timelineSvg);
