@@ -74,7 +74,7 @@ export default function Home() {
       ) : (
         <>
           <Head>
-            <image>{METADATA.img}</image>
+             <link rel="icon" href="/logo.svg" />
             <title>{METADATA.title}</title>
           </Head>
           <Layout>

@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 
 export const METADATA = {
   img: "/logo.svg",
-  title: "Portfolio | Shreya Patil",
+  title: "Shreya Patil",
   description:
     "I bridge the gap between design and development. I take responsibility to craft an aesthetic user experience using modern frontend architecture.",
   siteUrl: "#",
