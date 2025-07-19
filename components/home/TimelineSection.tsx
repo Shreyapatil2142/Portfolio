@@ -510,6 +510,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   );
 };
 
+TimelineSection.displayName = 'TimelineSection';
 export default TimelineSection;
 
 type LinkedTimelineNode = LinkedCheckpointNode | LinkedBranchNode;

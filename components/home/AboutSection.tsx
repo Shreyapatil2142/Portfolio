@@ -162,4 +162,5 @@ const AboutSection = memo(() => {
   );
 });
 
+AboutSection.displayName = 'AboutSection';
 export default memo(AboutSection);

@@ -14,7 +14,7 @@ import ProjectsSection from "@/components/home/projects";
 import SkillsSection from "@/components/home/skills";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/common/footer";
-import TimelineSection from "@/components/home/timeline";
+import TimelineSection from "@/components/home/TimelineSection";
 import AboutSection from "@/components/home/AboutSection";
 
 const DEBOUNCE_TIME = 100;
