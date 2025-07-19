@@ -153,14 +153,14 @@ export const SKILLS = {
     "css",
     "javascript",
     "vite",
-    "Python",
-    "Java",
-    "Cpp",
+    "python",
+    "java",
+    "cpp",
     "jira",
   ],
   librariesAndFrameworks: ["gsap", "tailwind", "react", "nextjs", "sass", "typescript"],
   databases: ["nodejs", "mysql", "mongodb",],
-  CloudAndML: ["git", "firebase", "gcloud", "Jupyter", "aws", "Colab",],
+  CloudAndML: ["git", "firebase", "gcloud", "jupyter", "aws", "colab",],
   UserInterface: ["figma", "photoshop", "svg",]
 };
 
