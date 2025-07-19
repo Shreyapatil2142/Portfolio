@@ -1,6 +1,6 @@
 import { METADATA } from "../constants";
 import Head from "next/head";
-import React, { useEffect, useState , useCallback} from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SocialLinks from "@/components/common/SocialLinks";
@@ -35,23 +35,19 @@ export default function Home() {
 
   const [isDesktop, setisDesktop] = useState(true);
 
-  let timer: NodeJS.Timeout = null;
+  const timer = useRef<NodeJS.Timeout | null>(null);
 
   const debouncedDimensionCalculator = useCallback(() => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
+    timer.current = setTimeout(() => {
       const isDesktopResult =
         typeof window.orientation === "undefined" &&
         navigator.userAgent.indexOf("IEMobile") === -1;
-
       window.history.scrollRestoration = "manual";
-
       setisDesktop(isDesktopResult);
     }, DEBOUNCE_TIME);
-  },[]);
+  }, []);
 
   useEffect(() => {
-
     setTimeout(() => {
       setIsLoading(false);
     }, 2600);
@@ -59,9 +55,13 @@ export default function Home() {
     debouncedDimensionCalculator();
 
     window.addEventListener("resize", debouncedDimensionCalculator);
-    return () =>
+    return () => {
       window.removeEventListener("resize", debouncedDimensionCalculator);
-  }, [timer,debouncedDimensionCalculator]);
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+    };
+  }, [timer, debouncedDimensionCalculator]);
 
   const renderBackdrop = (): React.ReactNode => (
     <div className="fixed top-0 left-0 h-screen w-screen bg-gray-900 -z-1"></div>

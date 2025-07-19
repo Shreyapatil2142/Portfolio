@@ -4,7 +4,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { MENULINKS } from "../../constants";
 import Image from "next/image";
-import Button from "../common/button";
 
 const ProfileImage = memo(() => ( 
   <div className="flex justify-end items-center sm:p-12 sm:py-0 sm:pb-0 p-0 py-2 pb-2">
@@ -162,5 +161,5 @@ const AboutSection = memo(() => {
   );
 });
 
-AboutSection.displayName = 'AboutSection';
-export default memo(AboutSection);
+AboutSection.displayName = "AboutSection";
+export default AboutSection;

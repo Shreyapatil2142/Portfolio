@@ -339,7 +339,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     if (isSmallScreen()) {
       setRightBranchX(70);
     }
-  }, []);
+  }, [generateTimelineSvg]);
 
   const setSlidesAnimation = (timeline: GSAPTimeline): void => {
     svgCheckpointItems.forEach((_, index) => {
@@ -414,7 +414,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       animation: timeline,
     });
     return { timeline, duration };
-  }, []);
+  }, [isDesktop, setSlidesAnimation, svgCheckpointItems.length, svgLength]);
 
   //   useEffect(() => {
   //   setTimelineSvg(svgContainer, timelineSvg);
@@ -510,7 +510,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
   );
 };
 
-TimelineSection.displayName = 'TimelineSection';
+TimelineSection.displayName = "TimelineSection";
 export default TimelineSection;
 
 type LinkedTimelineNode = LinkedCheckpointNode | LinkedBranchNode;
