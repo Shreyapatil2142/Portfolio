@@ -41,26 +41,26 @@ const Contact = () => {
   const buttonElementRef = useRef(null);
   const sectionRef = useRef(null);
 
+  type FieldKey = keyof FormDataType;
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
 
-    // Set isSending to true if there's input, false otherwise
     value.length === 0 ? setIsSending(false) : setIsSending(true);
 
     setFormData((prevVal) => {
-      // If the trimmed value is new AND longer than before
-      if (
-        value.trim() !== prevVal[id] &&
-        value.trim().length > prevVal[id].trim().length
-      ) {
-        return { ...prevVal, [id]: value.trim() };
+      const key = id as FieldKey; 
 
+      if (
+        value.trim() !== prevVal[key] &&
+        value.trim().length > prevVal[key].trim().length
+      ) {
+        return { ...prevVal, [key]: value.trim() };
       } else {
-        // Update as-is
-        return { ...prevVal, [id]: value };
+        return { ...prevVal, [key]: value };
       }
     });
   };
+
 
 
   const emptyForm = () => {
@@ -346,7 +346,7 @@ const Contact = () => {
 
           </FadeIn>
         </form>
-        
+
         <div className="mt-9 mx-auto link">
           <button
             ref={buttonElementRef}
