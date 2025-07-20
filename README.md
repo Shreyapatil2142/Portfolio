@@ -1,30 +1,86 @@
+## ✨ Personal Portfolio – Shreya Patil
 
-## PRTFOLIO
+An elegant and interactive developer portfolio built with Next.js and styled using SASS and Tailwind CSS. This portfolio highlights projects, certifications, skills, and milestones with animated transitions powered by GSAP. It is fully responsive and crafted to showcase both technical expertise and creative design.
 
-[Live Demo]()
+## 🌐 [Live Demo](https://shreyapatil2142-portfolio.vercel.app)
+---
 
-To cater to my goal of having my own portfolio website 🚀
+## 🚀 Tech Stack
 
-## How did I create this?
+- Next.js (React)
+- GSAP (Animations)
+- Tailwind CSS
+- SASS (SCSS)
+- TypeScript
 
-1. UI/UX is brainstormed using inspiration from winning portfolios from awwwards. High-fidelity mockup aggregating the ideas using Figma.
-2. This project uses React for simplicity to break down sections as components. Also uses next.js to achieve SSG. SVGs have been animated using CSS.
-3. Section scrolling and reveal animations uses GSAP. Card interactions use Tilt js. The timeline section was built using JS/SVGs and animated via GSAP.
-4. Optimised animations, layer management, repaints, and re-layouts using Chrome dev tools.
+ ## ⚙️ Features
+ 
+ - Smooth scroll & animated transitions (GSAP)
+ - Responsive UI for all devices
+ - Project & Certificate filtering with tabs
+ - Timeline-style milestone showcase
 
-## How to run on local?
+  ---
 
-First, run the development server:
+  ## 🗂️ Project Structure
+
+```
+Portfolio/
+├── components/
+│   ├── home
+│   └── common
+├── hooks/
+├── pages/
+│   ├── app.tsx
+│   └── index.tsx
+├── Portfolio/
+├── public/
+├── store/
+├── styles/
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── constants.ts
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+└── README.md
+```
+
+## 🛠️ Setup Instructions
+
+Clone the project
+
+```bash
+git clone https://github.com/Shreyapatil2142/portfolio.git
+```
+
+Go to the project directory
+
+```bash
+cd Portfolio
+```
+
+Remove remote origin
+
+```bash
+git remote remove origin
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👩‍💻 Author
 
-
-## A note on re-sharing
-
-I have been refining the project using 7+ years of my learnings. While I appreciate the beauty of open source, due credits to the project will be appreciated if you plan to re-share the template. Copyright headers with author name should be included under the forked versions as well. Happy coding :)
+- [@shreyapatil9530](https://github.com/Shreyapatil2142)
