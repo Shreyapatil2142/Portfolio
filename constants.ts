@@ -342,7 +342,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "10th passed from C.E.S.Prerana High School",
     size: ItemSize.SMALL,
     subtitle:
-      "Awarded as recognized themer,  Developed themes and ROMs for Xperia 2011 devices lineup with over 15k+ downloads. Featured on xda portal twice.",
+      "",
     slideImage: "/timeline/web-19.png",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
