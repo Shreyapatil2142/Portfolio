@@ -30,10 +30,7 @@ interface FormDataType {
 
 const initialState: FormDataType = { name: "", email: "", message: "" };
 
-
-
 const Contact = () => {
-  const initialState = { name: "", email: "", message: "" };
 
   const [formData, setFormData] = useState(initialState);
   const [mailerResponse, setMailerResponse] = useState("not initiated");
@@ -60,8 +57,6 @@ const Contact = () => {
       }
     });
   };
-
-
 
   const emptyForm = () => {
     setFormData(initialState);
@@ -91,12 +86,14 @@ const Contact = () => {
       });
   };
 
-
   useEffect(() => {
     if (mailerResponse === "success") {
       success();
     }
-  }, [mailerResponse]);
+    if (isSending === true) {
+      success();
+    }
+  }, [mailerResponse,isSending]);
 
   useEffect(() => {
     const button = buttonElementRef.current;
@@ -292,7 +289,7 @@ const Contact = () => {
 
         <form onClick={handleSubmit}
           className="pt-10 sm:mx-auto sm:w-[30rem] md:w-[35rem] staggered-reveal">
-
+      
           <FadeIn>
             <div className="relative">
               <input

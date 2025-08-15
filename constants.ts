@@ -45,7 +45,7 @@ export const TYPED_STRINGS = [
 export const EMAIL = "shreyapatil2142@gmail.com";
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/in/shreya-patil-9530shreya/",
+  linkedin: "https://www.linkedin.com/in/shreya-patil-9530shreya",
   github: "https://github.com/Shreyapatil2142",
   leetcode: "https://leetcode.com/u/mTiRhq2mKZ/",
   hackerrank: "https://www.hackerrank.com/profile/shreyapatil2142",
@@ -62,8 +62,8 @@ export interface Certificate {
 export const certificates:Certificate[] = [
  {
   id: 1,
-  title:"INTRODUCTION TO GENERATIVE AI",
-  image:"/certificates/GenAI.jpg"
+  title:"Machine Learning",
+  image:"/certificates/Machine-learning.jpg"
  },
   {
   id: 2,
@@ -72,8 +72,8 @@ export const certificates:Certificate[] = [
  },
   {
   id: 3,
-  title:"Basics of Python",
-  image:"/certificates/Infosys.jpg"
+  title:"Fundamentals of Cyber Security",
+  image:"/certificates/Cyber-security.jpg"
  },
   {
   id: 4,
@@ -82,8 +82,8 @@ export const certificates:Certificate[] = [
  },
   {
   id: 5,
-  title:"Learning Microsoft 365 Copilot",
-  image:"/certificates/Copilot.jpg"
+  title:"Frontend Developer(React)",
+  image:"/certificates/react.jpg"
  },
   {
   id: 6,
