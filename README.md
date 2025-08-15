@@ -2,7 +2,7 @@
 
 My portfolio highlights projects, certifications, skills, and milestones with animated transitions powered by GSAP. It is fully responsive and crafted to showcase both technical expertise and creative design.
 
-### 🌐 [Live Demo](shreyapatil2142-portfolio.vercel.app)
+### 🌐 [Live Demo](https://shreyapatil2142-portfolio.vercel.app)
 
 ---
 ## 🚀 Tech Stack
